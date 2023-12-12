@@ -1,0 +1,37 @@
+<div class="budget-container">
+  <div class="component-container">
+    <div class="content-container" [ngClass]="{ 'centered': !showAddBudget, 'half-width': showAddBudget }">
+      <h2>Data for {{ selectedMonth }}</h2>
+      <div>
+        <label for="selectMonth">Amount spent in </label>
+        <select [(ngModel)]="selectedMonth" (change)="onChangeMonth()" id="selectMonth" aria-label="Select Month">
+          <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+        </select>
+      </div>
+      <div class="table-wrapper">
+        <table summary="Budget Data">
+          <thead>
+            <tr>
+              <th scope="col">Budget Criteria</th>
+              <th scope="col">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let budget of budgets">
+              <td>{{ budget.budgetCriteria }}</td>
+              <td>{{ budget.amount }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="add-budget">
+        <button (click)="toggleAddBudget()" *ngIf="!showAddBudget" aria-label="Add Budget">Add Budget</button>
+      </div>
+    </div>
+  </div>
+  <div class="component-container" *ngIf="showAddBudget">
+    <div class="add-budget-container">
+      <app-add-budget (closeAddBudget)="closeAddBudget()"></app-add-budget>
+    </div>
+  </div>
+</div>

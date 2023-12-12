@@ -1,0 +1,22 @@
+<div class="bar-chart-container">
+
+  <div class="text-content">
+    <h2>Graph which shows data for {{ selectedMonth }}</h2>
+    <div class="select-container">
+      <label for="selectMonth" class="font-set"> month</label>
+      <select [(ngModel)]="selectedMonth" (change)="onChangeMonth()" id="selectMonth" aria-label="Select Month">
+        <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+      </select>
+    </div>
+    <p></p>
+  </div>
+  <div class="chart-wrapper" aria-label="Bar Chart">
+    <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            chartType="bar">
+    </canvas>
+  </div>
+</div>

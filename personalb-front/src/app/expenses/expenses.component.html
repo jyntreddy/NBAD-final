@@ -1,0 +1,37 @@
+<div class="expense-container" role="region" aria-label="Expense Data">
+  <div class="component-container">
+    <div class="content-container" [ngClass]="{ 'centered': !showAddExpense, 'half-width': showAddExpense }">
+      <h2>Data for {{ selectedMonth }}</h2>
+      <div>
+        <label for="selectMonth">month</label>
+        <select [(ngModel)]="selectedMonth" (change)="onChangeMonth()" id="selectMonth" aria-label="Select Month">
+          <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+        </select>
+      </div>
+      <div class="table-wrapper">
+        <table summary="Expense Data">
+          <thead>
+            <tr>
+              <th scope="col">Expense Criteria</th>
+              <th scope="col">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let expense of expenses">
+              <td>{{ expense.budgetCriteria}}</td>
+              <td>{{ expense.expense }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="add-expense">
+        <button (click)="toggleAddExpense()" *ngIf="!showAddExpense" aria-label="Add Expense">Add Expense</button>
+      </div>
+    </div>
+  </div>
+  <div class="component-container" *ngIf="showAddExpense">
+    <div class="add-expense-container">
+      <app-add-expense (closeAddExpense)="closeAddExpense()"></app-add-expense>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<form (ngSubmit)="onSubmit()" role="form">
+  <div>
+    <label for="selectedMonth">Select Month:</label>
+    <select [(ngModel)]="selectedMonth" name="selectedMonth" id="selectedMonth" (change)="getBudgetsForSelectedMonth()" aria-label="Select Month">
+      <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+    </select>
+  </div>
+  <div *ngIf="selectedMonth">
+    <label for="selectedBudget">Select Budget:</label>
+    <select [(ngModel)]="selectedBudget" name="selectedBudget" id="selectedBudget" aria-label="Select Budget">
+      <option *ngFor="let budget of budgets" [value]="budget">{{ budget }}</option>
+    </select>
+  </div>
+  <div>
+    <label for="expense">Expense:</label>
+    <input type="number" id="expense" [(ngModel)]="expense" name="amount" required aria-label="Expense" aria-describedby="expenseValidation">
+    <div *ngIf="addExpenseError" class="error-message" id="expenseValidation">{{ addExpenseError }}</div>
+  </div>
+  <div>
+    <button type="submit" [disabled]="expense <= 0 || !selectedBudget" aria-label="Add Expense">
+      Add Expense
+    </button>
+  </div>
+</form>

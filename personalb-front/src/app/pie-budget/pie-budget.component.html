@@ -1,0 +1,15 @@
+<div class="pie-chart-container">
+  <div class="text-content">
+    <h2>Amount - {{ selectedMonth }}</h2>
+    <div class="select-container"><a class="font-set"> month </a>
+      <select [(ngModel)]="selectedMonth" (change)="onChangeMonth()">
+        <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="divider-container">
+  </div>
+  <div class="chart-wrapper">
+    <canvas class="chart-canvas" id="pieChart"></canvas>
+  </div>
+</div>

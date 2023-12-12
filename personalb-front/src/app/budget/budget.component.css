@@ -1,0 +1,63 @@
+.budget-container {
+  display: flex;
+  margin-top: 10px;
+  align-items: flex-start; /* Align to the top left */
+  justify-content: top;
+  height: 85vh;
+}
+
+.component-container {
+  width: 50%;
+  padding: 20px;
+  margin-top: 50px;
+  margin-left: 50px;
+  /* border-radius: 20px;
+  border: 0px solid #f6fbff; 
+  background-color: #ecf0f1;  */
+  margin: 10px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align to the top left */
+  margin-top: 20px;
+  height: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 10px;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #bdc3c7; /* Light gray color for borders */
+  text-align: top;
+  padding: 8px;
+  border-radius: 20px;
+}
+
+.centered {
+  justify-content: flex-start; /* Align to the top left */
+}
+
+.half-width {
+  display: flex;
+}
+
+.add-budget-container {
+  width: 50%;
+  padding: 50px;
+}
+
+.add-budget button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #978987; /* Red color for button */
+  color: white;
+  border: none;
+  cursor: pointer;
+}

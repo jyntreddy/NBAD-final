@@ -1,0 +1,17 @@
+<nav>
+  <div class="side-by-side">
+    <div class="logo">
+      <a [routerLink]="['/']">
+      </a>
+    </div>
+    <div class="title-container">
+      <h2 class="title">Personal Budget</h2>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a [routerLink]="['/']">Home</a></li>
+    <li *ngIf="!isLoggedIn"><a [routerLink]="['/login']">Login/SignUp</a></li>
+    <li *ngIf="isLoggedIn"><a [routerLink]="['/dashboard']">Dashboard</a></li>
+    <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
+  </ul>
+</nav>

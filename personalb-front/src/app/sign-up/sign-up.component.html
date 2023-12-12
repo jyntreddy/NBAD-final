@@ -1,0 +1,29 @@
+<div class="signup-container">
+  <div class="form-container">
+    <h2>Sign Up</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <input type="text" id="name" name="name" [(ngModel)]="firstName" placeholder="First Name" required>
+      </div>
+      <div>
+        <input type="text" id="name" name="name" [(ngModel)]="lastName" placeholder="Last Name" required>
+      </div>
+      <div>
+        <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Email" required>
+      </div>
+      <div>
+        <input type="text" id="username" name="username" [(ngModel)]="username" placeholder="Username" required>
+      </div>
+      <div>
+        <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Password" required>
+      </div>
+      <div>
+        <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirm password" required>
+      </div>
+      <div>
+        <button type="submit">Sign Up</button>
+      </div>
+      <div *ngIf="signUpError" class="error-message">{{ signUpError }}</div>
+    </form>
+  </div>
+</div>

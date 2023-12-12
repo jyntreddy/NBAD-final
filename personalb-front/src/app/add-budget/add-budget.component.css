@@ -1,0 +1,39 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 20px; /* Adjusted margin to move the form to the top left */
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #34495e; /* Dark grayish blue color for labels */
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #3498db; /* Light blue color for input borders */
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #766260; /* Red color for buttons */
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #d2d7db; /* Light gray color for disabled buttons */
+  cursor: not-allowed;
+}

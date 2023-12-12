@@ -1,0 +1,24 @@
+<form (ngSubmit)="onSubmit()" role="form">
+  <div>
+    <label for="budgetCriteria">Budget Criteria:</label>
+    <input type="text" id="budgetCriteria" [(ngModel)]="budgetCriteria" name="budgetCriteria" required aria-label="Budget Criteria">
+  </div>
+  <div>
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" [(ngModel)]="amount" name="amount" required aria-label="Amount">
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Select Month(s):</mat-label>
+      <mat-select multiple [(ngModel)]="selectedMonths" name="selectedMonths" aria-label="Select Month(s)">
+        <mat-option (click)="selectAllMonths()">Select All</mat-option>
+        <mat-option *ngFor="let month of months" [value]="month">{{ month }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <button type="submit" [disabled]="!budgetCriteria || amount <= 0 || !hasSelectedMonths()" aria-label="Add Budget">
+      Add Budget
+    </button>
+  </div>
+</form>

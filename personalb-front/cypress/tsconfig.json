@@ -1,0 +1,21 @@
+{
+  "extends": "../tsconfig.json",
+  "include": ["**/*.ts"],
+  "compilerOptions": {
+    "sourceMap": false,
+    "types": ["cypress"]
+  }
+
+}
+
+// {
+//   "extends": "../tsconfig.json",
+//   "include": ["**/*.ts"],
+
+//   "compilerOptions": {
+//     "target": "es5",
+//     "lib": ["es5", "dom"],
+//     "types": ["cypress", "@applitools/eyes-cypress", "node"],
+//     "moduleResolution": "node" // or  "moduleResolution": "node16"
+//   },
+// }

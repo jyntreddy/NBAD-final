@@ -1,0 +1,18 @@
+<div class="donut-chart-container" role="region" aria-label="Expense Chart">
+  <div class="text-content">
+    <h2>Amount - {{ selectedMonth }}</h2>
+    <div class="select-container">
+      <label for="selectMonth" class="font-set"> month</label>
+      <select [(ngModel)]="selectedMonth" (change)="onChangeMonth()" id="selectMonth" aria-label="Select Month">
+        <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+      </select>
+    </div>
+    <p></p>
+  </div>
+  <div class="divider-container" role="separator" aria-hidden="true">
+    <!-- Placeholder -->
+  </div>
+  <div class="chart-wrapper" role="img" aria-label="Donut Chart">
+    <canvas class="donut-canvas" id="donutChart" width="800" height="400" aria-hidden="true"></canvas>
+  </div>
+</div>

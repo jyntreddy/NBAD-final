@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.bar-chart-container {
+  display: flex;
+  padding: 2%;
+  background-color: #dcdada;
+  box-sizing: border-box;
+}
+
+.chart-wrapper {
+  width: 48%;
+  padding: 2%;
+  border-radius: 2%;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.text-content {
+  width: 48%;
+  padding: 2%;
+  text-align: center;
+  box-sizing: border-box;
+  align-self: center;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  border-radius: 2%;
+}
+
+.select-container select {
+  width: 20%;
+  padding: 2%;
+  border-radius: 1%;
+  border: 1px solid #ccc;
+  background-color: #e6e5e5;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.select-container select::-ms-expand {
+  display: none;
+}
+
+.select-container select:hover {
+  border-color: #999;
+}
+
+.select-container select:focus {
+  border-color: #333;
+}
+
+@media (max-width: 768px) {
+  .bar-chart-container {
+    flex-direction: column;
+  }
+  .chart-wrapper,
+  .text-content {
+    width: 96%;
+    margin-bottom: 2%;
+  }
+}
